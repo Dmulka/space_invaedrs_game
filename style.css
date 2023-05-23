@@ -1,0 +1,26 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.grid{
+    width: 375px;
+    height: 500px;
+    border: 1px solid gold;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+}
+
+.grid div {
+    width: 25px;
+    height: 25px;
+}
+
+.invader {
+    color: red;
+}
