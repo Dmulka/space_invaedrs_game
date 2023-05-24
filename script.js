@@ -101,10 +101,10 @@ function moveBlast(e) {
 
     function moveProj() {
         console.log(1,squares[projectileIndex].classList.value)
-        squares[projectileIndex].classList.add('projectile')
+        squares[projectileIndex].classList.remove('projectile')
         console.log(2,squares[projectileIndex].classList.value)
         projectileIndex -= width
-       // squares[projectileIndex].classList.remove('projectile')
+        squares[projectileIndex].classList.add('projectile')
         console.log(3,squares[projectileIndex].classList.value)
 
             if (squares[projectileIndex].classList.contains('invader')){
