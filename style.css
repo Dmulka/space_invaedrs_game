@@ -7,7 +7,7 @@ body {
 }
 
 
-.grid{
+.board{
     width: 375px;
     height: 500px;
     border: 1px solid gold;
@@ -16,11 +16,16 @@ body {
     background-color: black;
 }
 
-.grid div {
+.board div {
     width: 25px;
     height: 25px;
 }
 
 .invader {
-    color: red;
+    background-color: blue;
+	border-radius: 20px;
+}
+
+.shooter {
+	background-color: red;
 }
