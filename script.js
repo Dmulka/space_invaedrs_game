@@ -30,11 +30,6 @@ for (let i = 0; i < 300; i++) {
 
 
 
-
-
-
-
-
 // width of board 
 
 
@@ -95,12 +90,36 @@ if ((currentShooterIndex + 1) % width !==0){
         }
       });
 
-// projectile 
-function blaster {
+// projectile  logic
 
+    
+   
+
+function moveBlast(e) {
+    let projectileIndex = currentShooterIndex
+    let projectileID
+
+    function moveProj() {
+        console.log(1,squares[projectileIndex].classList.value)
+        squares[projectileIndex].classList.add('projectile')
+        console.log(2,squares[projectileIndex].classList.value)
+        projectileIndex -= width
+       // squares[projectileIndex].classList.remove('projectile')
+        console.log(3,squares[projectileIndex].classList.value)
+
+            if (squares[projectileIndex].classList.contains('invader')){
+                squares[projectileIndex].classList.remove('invader')
+                squares[projectileIndex].classList.remove('projectile')
+                clearInterval(projectileID)
+           }
+
+    
+    }
+
+switch(e.key){
+    case 'ArrowUp':
+        projectileID = setInterval(moveProj, 100)
+    } 
 }
-
-
-
-
+document.addEventListener('keydown', moveBlast)
 

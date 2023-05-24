@@ -29,3 +29,7 @@ body {
 .shooter {
 	background-color: red;
 }
+
+.projectile {
+	background-color: aqua;
+}
