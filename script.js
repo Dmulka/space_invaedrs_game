@@ -1,6 +1,8 @@
 // get gameBoard variable 
 const grid = document.querySelector('.board')
 
+const winDisplay = document.getElementById('winDisplay')
+
 let currentShooterIndex = 292
 
 let width = 15
@@ -28,6 +30,7 @@ for (let i = 0; i < 300; i++) {
     for (let i = 0; i < alienInvaders.length; i++) {
         squares[alienInvaders[i]].classList.add('invader')
       }
+      
     }
   
   draw()
@@ -110,9 +113,9 @@ function moveBlast(e) {
         projectileIndex -= width
         squares[projectileIndex].classList.add('projectile')
        console.log(3,squares[projectileIndex].classList.value)
-       console.log(projectileIndex)
+       //console.log(projectileIndex)
 
-            if (squares[projectileIndex].classList.contains('invader') ||       projectileIndex -14 < 0 ) {
+            if (squares[projectileIndex].classList.contains('invader') ||       projectileIndex -15 < 0 ) {
                 squares[projectileIndex].classList.remove('invader')
                 squares[projectileIndex].classList.remove('projectile')
                 clearInterval(projectileID)
@@ -120,9 +123,13 @@ function moveBlast(e) {
                 const invadersRemoved = alienInvaders.indexOf(projectileIndex)
                 removedInvaders.push(invadersRemoved)
                 console.log(removedInvaders)
+                
            } 
-       
-           
+           if (removedInvaders.length === alienInvaders.length){
+            winDisplay.innerHTML = 'You Win'
+            clearInterval(projectileID)
+
+        } 
     }
 switch(e.key){
     case 'ArrowUp':
@@ -132,5 +139,3 @@ switch(e.key){
 }
 document.addEventListener('keydown', moveBlast)
 
-//if (removedInvaders === alienInvaders.length){
-            //window.alert('You Win!')
