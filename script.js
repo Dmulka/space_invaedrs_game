@@ -4,7 +4,11 @@ const grid = document.querySelector('.board')
 let currentShooterIndex = 292
 
 let width = 15
+
+let removedInvaders = []
  
+const upperRowIndex = [0,1,2,3,4,5,6,7,8,9]
+
 const alienInvaders = [
     0,1,2,3,4,5,6,7,8,9,10,11,12,12,13,14,
     15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,
@@ -28,7 +32,7 @@ for (let i = 0; i < 300; i++) {
   
   draw()
 
-
+   
 
 // width of board 
 
@@ -100,26 +104,33 @@ function moveBlast(e) {
     let projectileID
 
     function moveProj() {
-        console.log(1,squares[projectileIndex].classList.value)
+       // console.log(1,squares[projectileIndex].classList.value)
         squares[projectileIndex].classList.remove('projectile')
-        console.log(2,squares[projectileIndex].classList.value)
+       // console.log(2,squares[projectileIndex].classList.value)
         projectileIndex -= width
         squares[projectileIndex].classList.add('projectile')
-        console.log(3,squares[projectileIndex].classList.value)
+       console.log(3,squares[projectileIndex].classList.value)
+       console.log(projectileIndex)
 
-            if (squares[projectileIndex].classList.contains('invader')){
+            if (squares[projectileIndex].classList.contains('invader') ||       projectileIndex -14 < 0 ) {
                 squares[projectileIndex].classList.remove('invader')
                 squares[projectileIndex].classList.remove('projectile')
                 clearInterval(projectileID)
-           }
 
-    
+                const invadersRemoved = alienInvaders.indexOf(projectileIndex)
+                removedInvaders.push(invadersRemoved)
+                console.log(removedInvaders)
+           } 
+       
+           
     }
-
 switch(e.key){
     case 'ArrowUp':
         projectileID = setInterval(moveProj, 100)
+    break
     } 
 }
 document.addEventListener('keydown', moveBlast)
 
+//if (removedInvaders === alienInvaders.length){
+            //window.alert('You Win!')
