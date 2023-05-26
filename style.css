@@ -4,16 +4,24 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(84, 2, 143);
+    font-family: 'Righteous', cursive;
+}
+
+h1 {
+color: rgb(240, 204, 2)
+
 }
 
 
 .board{
     width: 375px;
     height: 500px;
-    border: 1px solid gold;
+    border: 3px solid rgb(240, 204, 2);
     display: flex;
     flex-wrap: wrap;
     background-color: black;
+    
 }
 
 .board div {
@@ -32,4 +40,30 @@ body {
 
 .projectile {
 	background-color: aqua;
+}
+
+.youWinPop {
+  position: absolute;
+  display: inline-block;
+  font-size: x-large;
+
+}
+
+.youWinPop .theMessage {
+    visibility: hidden;
+    text-align: center;
+    border-radius: 10%;
+    color: rgb(240, 204, 2);
+    background-image: url(https://i.etsystatic.com/19543171/r/il/681e67/2109019559/il_570xN.2109019559_3oca.jpg);
+    padding: 75px;
+
+}
+
+.youWinPop .theMessage::after {
+    top: 100%;
+    
+
+}
+.youWinPop .show {
+visibility: visible;
 }
