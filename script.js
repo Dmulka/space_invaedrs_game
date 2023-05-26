@@ -11,11 +11,11 @@ let removedInvaders = []
  
 const upperRowIndex = [0,1,2,3,4,5,6,7,8,9]
 
-const alienInvaders = [0]
-  //   0,1,2,3,4,5,6,7,8,9,10,11,12,12,13,14,
-  //   15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,
-  //   30,31,32,33,34,35,36,37,38,39,40,41,42,43,44
-  // ]
+const alienInvaders = [
+    0,1,2,3,4,5,6,7,8,9,10,11,12,12,13,14,
+    15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,
+    30,31,32,33,34,35,36,37,38,39,40,41,42,43,44
+  ]
 
 
 for (let i = 0; i < 300; i++) {
@@ -25,6 +25,10 @@ for (let i = 0; i < 300; i++) {
   
   const squares = Array.from(document.querySelectorAll('.board div'))
   
+
+
+//    ***invaders***
+
   
   function draw() {
     for (let i = 0; i < alienInvaders.length; i++) {
@@ -35,20 +39,10 @@ for (let i = 0; i < 300; i++) {
   
   draw()
 
-   
-
-// width of board 
+  
 
 
 // create variable for all the individual square - and make an array?
-
-//    ***invaders***
-
-// 1. arrrya the index positions the invaders will stat off iin
-
-
-// 2.  function that iterates over the invader index and passsed the value 
-// into the squares array.  Creates new class (invader)
 
 
 ///   ***shoote***
